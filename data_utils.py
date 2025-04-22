@@ -8,17 +8,11 @@ import os
 from spacy import displacy
 from collections import defaultdict
 from textblob import TextBlob
-import ast, subprocess, importlib.util
+import ast
 
 
 # Load spacy model from NLP
-try:
-    import en_core_web_sm
-    nlp = en_core_web_sm.load()
-except ModuleNotFoundError:
-    subprocess.run(["python", "-m", "spacy", "download", "en_core_web_sm"])
-    import en_core_web_sm
-    nlp = en_core_web_sm.load()
+nlp = spacy.load("en_core_web_sm")
 
 def load_data():
     """Load and preprocess the climate data."""

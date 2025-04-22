@@ -58,7 +58,10 @@ def load_model(model_name):
     """Load trained model from disk."""
     current_dir = os.path.dirname(os.path.abspath(__file__))
     data_file = os.path.join(current_dir, 'models', model_name)
-    return joblib.load(f"{data_file}.pkl")
+    try:
+        return joblib.load(f"{data_file}.pkl")
+    except AttributeError:
+        return joblib.load(f"models/{data_file}.pkl")
 
 def analyze_text(text):
     """Perform NLP analysis on text using spacy."""

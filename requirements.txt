@@ -7,3 +7,9 @@ seaborn
 spacy
 joblib
 textblob
+os
+ast
+collections
+subprocess
+importlib
+plotly

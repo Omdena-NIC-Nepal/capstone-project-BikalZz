@@ -11,12 +11,12 @@ from textblob import TextBlob
 import ast, subprocess, importlib.util
 
 
-# Automatically download model if not present
-if importlib.util.find_spec("en_core_web_sm") is None:
-    subprocess.run(["python", "-m", "spacy", "download", "en_core_web_sm"])
-
 # Load spacy model from NLP
-nlp = spacy.load("en_core_web_sm")
+try:
+    nlp = spacy.load("en_core_web_sm")
+except OSError:
+    subprocess.run(["python", "-m", "spacy", "download", "en_core_web_sm"])
+    nlp = spacy.load("en_core_web_sm")
 
 def load_data():
     """Load and preprocess the climate data."""

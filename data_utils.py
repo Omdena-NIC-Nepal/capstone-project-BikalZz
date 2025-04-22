@@ -13,10 +13,12 @@ import ast, subprocess, importlib.util
 
 # Load spacy model from NLP
 try:
-    nlp = spacy.load("en_core_web_sm")
-except OSError:
+    import en_core_web_sm
+    nlp = en_core_web_sm.load()
+except ImportError:
     subprocess.run(["python", "-m", "spacy", "download", "en_core_web_sm"])
-    nlp = spacy.load("en_core_web_sm")
+    import en_core_web_sm
+    nlp = en_core_web_sm.load()
 
 def load_data():
     """Load and preprocess the climate data."""

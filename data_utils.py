@@ -9,6 +9,10 @@ from spacy import displacy
 from collections import defaultdict
 from textblob import TextBlob
 import ast
+import nltk
+
+# Download required NLTK data
+nltk.download('punkt')
 
 
 # Load spacy model from NLP

@@ -15,7 +15,7 @@ import ast, subprocess, importlib.util
 try:
     import en_core_web_sm
     nlp = en_core_web_sm.load()
-except ImportError:
+except ModuleNotFoundError:
     subprocess.run(["python", "-m", "spacy", "download", "en_core_web_sm"])
     import en_core_web_sm
     nlp = en_core_web_sm.load()

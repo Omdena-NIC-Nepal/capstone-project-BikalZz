@@ -8,7 +8,12 @@ import os
 from spacy import displacy
 from collections import defaultdict
 from textblob import TextBlob
-import ast, re
+import ast, subprocess, importlib.util
+
+
+# Automatically download model if not present
+if importlib.util.find_spec("en_core_web_sm") is None:
+    subprocess.run(["python", "-m", "spacy", "download", "en_core_web_sm"])
 
 # Load spacy model from NLP
 nlp = spacy.load("en_core_web_sm")

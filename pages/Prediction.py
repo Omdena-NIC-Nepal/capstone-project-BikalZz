@@ -83,17 +83,20 @@ def show():
         input_df[num_cols] = scaler.transform(input_df[num_cols])
 
         # Predict
-        prediction = model.predict(input_df.drop(columns=['avg_max_temp'], errors='ignore'))
+        try:
+            prediction = model.predict(input_df.drop(columns=['avg_max_temp'], errors='ignore'))
+            # Display result
+            st.success(f"Predicted Maximum Temperature: {prediction[0]:.2f}°C")
+            
+            # Show historical context
+            st.subheader("Historical Context")
+            fig, ax = plt.subplots(figsize=(10, 5))
+            sns.lineplot(data=data, x='year', y='avg_max_temp', ax=ax)
+            ax.axvline(x=year, color='r', linestyle='--', label='Prediction Year')
+            ax.axhline(y=prediction[0], color='g', linestyle='--', label='Predicted Temp')
+            ax.set_title("Historical Maximum Temperatures")
+            ax.legend()
+            st.pyplot(fig)
+        except ValueError:
+            st.warning(f"Train the selected model before predicting!")
         
-        # Display result
-        st.success(f"Predicted Maximum Temperature: {prediction[0]:.2f}°C")
-        
-        # Show historical context
-        st.subheader("Historical Context")
-        fig, ax = plt.subplots(figsize=(10, 5))
-        sns.lineplot(data=data, x='year', y='avg_max_temp', ax=ax)
-        ax.axvline(x=year, color='r', linestyle='--', label='Prediction Year')
-        ax.axhline(y=prediction[0], color='g', linestyle='--', label='Predicted Temp')
-        ax.set_title("Historical Maximum Temperatures")
-        ax.legend()
-        st.pyplot(fig)

@@ -23,8 +23,8 @@ def show():
     - Lexicon-based sentiment (custom CSV)
     """)
     
-    user_text = st.text_area("Paste climate-related article/reports:", height=200,
-                           placeholder="E.g., 'Global warming is causing catastrophic damage to ecosystems...Hit Ctl+Enter to analyze..'")
+    user_text = st.text_area("Paste climate-related article/reports(Hit 'Ctl+Enter' to analyze):", height=200,
+                           placeholder="E.g., 'Global warming is causing catastrophic damage to ecosystems...'")
     
     if not user_text:
         return

@@ -9,7 +9,6 @@ from spacy import displacy
 from collections import defaultdict
 from textblob import TextBlob
 import ast
-import corpora
 
 
 # Load spacy model from NLP

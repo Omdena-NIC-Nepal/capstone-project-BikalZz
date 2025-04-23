@@ -22,7 +22,6 @@ except Exception as e:
     print(f"Error downloading NLTK corpora: {e}")
 
 # Download required NLTK corpora
-@st.cache_resource  # Cache to avoid re-downloading on reruns
 def download_nltk_data():
     TextBlob.download_corpora()
 

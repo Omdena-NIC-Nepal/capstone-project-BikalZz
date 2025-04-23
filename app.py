@@ -8,11 +8,6 @@ def main():
         layout = 'wide'
     )
 
-    
-    # Initialize session state for navigation if it doesn't exist
-    if 'current_page' not in st.session_state:
-        st.session_state.current_page = "Home"
-
     # Load data once and cache it
     data = load_data()
 
@@ -20,31 +15,23 @@ def main():
     if 'data' not in st.session_state:
         st.session_state.data = data
 
-    # Sidebar Navigation with proper state management
+    # Sidebar Navigation
     with st.sidebar:
         st.title('Navigation')
-        
-        # Define navigation options once
-        nav_options = [
-            "Home",
-            "Exploratory Data Analysis", 
-            "Feature Engineering",
-            "Model Training",
-            "Model Evaluation",
-            "Prediction",
-            "Climate Text Analysis"
-        ] 
-
-        # Create radio button with unique key
         page = st.radio(
             "Go to",
-            options=nav_options,
-            key="nav_radio",
-            index=nav_options.index(st.session_state.current_page)
-        )
-        
-        # Update current page in session state
-        st.session_state.current_page = page
+            options=[
+                "Home",
+                "Exploratory Data Analysis", 
+                "Feature Engineering",
+                "Model Training",
+                "Model Evaluation",
+                "Prediction",
+                "Climate Text Analysis"
+            ],
+            # Add key to prevent duplicate widgets
+            key="nav_radio"  
+        ) 
 
     # Display the selected page
     if page == "Home":

@@ -6,10 +6,8 @@ from data_utils import analyze_climate_text, analyze_climate_sentiment
 
 # Download required NLTK corpora
 @st.cache_resource  # Cache to avoid re-downloading on reruns
-def download_nltk_data():
-    TextBlob.download_corpora()
-
-download_nltk_data()  
+from textblob.download_corpora import download_all
+download_all()  # Downloads all TextBlob-required NLTK data 
 
 def show():
     st.title("📝 Climate Text Analysis")

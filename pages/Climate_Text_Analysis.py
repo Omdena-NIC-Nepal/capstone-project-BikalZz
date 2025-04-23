@@ -4,6 +4,12 @@ import plotly.express as px
 from textblob import TextBlob
 from data_utils import analyze_climate_text, analyze_climate_sentiment
 
+# Download required NLTK corpora
+@st.cache_resource  # Cache to avoid re-downloading on reruns
+def download_nltk_data():
+    TextBlob.download_corpora()
+
+download_nltk_data()  
 
 def show():
     st.title("📝 Climate Text Analysis")

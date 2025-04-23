@@ -1,12 +1,16 @@
 import streamlit as st
 from data_utils import load_data
 import nltk
-nltk.download('punkt')
-nltk.download('brown')
-nltk.download('wordnet')
-nltk.download('averaged_perceptron_tagger')
-nltk.download('movie_reviews')
-nltk.download('conll2000')
+try:
+    nltk.download('punkt')
+    nltk.download('brown')
+    nltk.download('wordnet')
+    nltk.download('averaged_perceptron_tagger')
+    nltk.download('movie_reviews')
+    nltk.download('conll2000')
+    print("NLTK corpora downloaded successfully.")
+except Exception as e:
+    print(f"Error downloading NLTK corpora: {e}")
 
 def main():
     st.set_page_config(

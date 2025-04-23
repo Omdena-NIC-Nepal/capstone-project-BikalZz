@@ -29,7 +29,6 @@ def main():
                 "Prediction",
                 "Climate Text Analysis"
             ],
-            # Add key to prevent duplicate widgets
             key="nav_radio"  
         ) 
 

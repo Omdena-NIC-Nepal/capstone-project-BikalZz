@@ -22,7 +22,6 @@ def main():
 
     # Sidebar Navigation with proper state management
     with st.sidebar:
-        st.markdown("# app")
         st.title('Navigation')
         
         # Define navigation options once

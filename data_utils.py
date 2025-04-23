@@ -22,10 +22,8 @@ except Exception as e:
     print(f"Error downloading NLTK corpora: {e}")
 
 # Download required NLTK corpora
-def download_nltk_data():
-    TextBlob.download_corpora()
-
-download_nltk_data()  
+from textblob.download_corpora import download_all
+download_all()  # Downloads all TextBlob-required NLTK data 
 
 
 # Load spacy model from NLP

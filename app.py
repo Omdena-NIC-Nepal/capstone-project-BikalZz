@@ -1,5 +1,12 @@
 import streamlit as st
 from data_utils import load_data
+import nltk
+nltk.download('punkt')
+nltk.download('brown')
+nltk.download('wordnet')
+nltk.download('averaged_perceptron_tagger')
+nltk.download('movie_reviews')
+nltk.download('conll2000')
 
 def main():
     st.set_page_config(

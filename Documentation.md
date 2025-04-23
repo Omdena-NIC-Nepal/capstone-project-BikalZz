@@ -150,7 +150,10 @@ A: If the NLP isn't working:
 2. Ensure you're entering text in the input box on the Home page/Climate Text Analysis page.
 
 ### Q6: How can I deploy this application?
-A: You can deploy this Streamlit app on Streamlit Sharing.
+A: You can deploy this Streamlit app on Streamlit Sharing. 
+
+### Q7: What is the url of the project deployment?
+A: You can view the app of this project through this link: https://omdena-nic-nepal-capstone-project-bikalzz.streamlit.app/
 
 ## Troubleshooting
 

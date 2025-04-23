@@ -17,6 +17,7 @@ def main():
 
     # Sidebar Navigation
     with st.sidebar:
+        st.markdown("# app")
         st.title('Navigation')
         page = st.radio(
             "Go to",

@@ -8,18 +8,7 @@ import os
 from spacy import displacy
 from collections import defaultdict
 from textblob import TextBlob
-import nltk
 import ast
-try:
-    nltk.download('punkt')
-    nltk.download('brown')
-    nltk.download('wordnet')
-    nltk.download('averaged_perceptron_tagger')
-    nltk.download('movie_reviews')
-    nltk.download('conll2000')
-    print("NLTK corpora downloaded successfully.")
-except Exception as e:
-    print(f"Error downloading NLTK corpora: {e}")
 
 # Download required NLTK corpora
 from textblob.download_corpora import download_all

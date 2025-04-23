@@ -3,11 +3,14 @@ import pandas as pd
 import plotly.express as px
 from textblob import TextBlob
 from data_utils import analyze_climate_text, analyze_climate_sentiment
+from textblob.download_corpora import download_all
 
 # Download required NLTK corpora
 @st.cache_resource  # Cache to avoid re-downloading on reruns
-from textblob.download_corpora import download_all
-download_all()  # Downloads all TextBlob-required NLTK data 
+def download_nltk_data():
+    download_all()  # Downloads all TextBlob-required NLTK data
+
+download_nltk_data()  # Call the function to download data
 
 def show():
     st.title("📝 Climate Text Analysis")

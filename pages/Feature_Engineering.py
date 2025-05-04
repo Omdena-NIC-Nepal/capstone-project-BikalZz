@@ -1,13 +1,14 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+from data_utils import load_data
 
 def show():
     st.title("🛠️ Feature Engineering")
     
+    # Load data only when this page is accessed
     if 'data' not in st.session_state:
-        st.error("Data not loaded. Please return to the Home page.")
-        return
+        st.session_state.data = load_data()
     
     data = st.session_state.data.copy()
     

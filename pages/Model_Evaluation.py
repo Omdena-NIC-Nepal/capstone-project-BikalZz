@@ -3,7 +3,6 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-from data_utils import load_model
 
 def show():
     st.title("📈 Model Evaluation")

@@ -30,6 +30,10 @@ def show():
 
     # Data preview
     st.header("🔍 Data Preview")
+    # Load data only when this page is accessed
+    if 'data' not in st.session_state:
+        st.session_state.data = load_data()
+    
     data = load_data()
     st.dataframe(data.head())
 

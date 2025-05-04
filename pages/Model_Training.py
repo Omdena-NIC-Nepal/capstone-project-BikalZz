@@ -9,13 +9,14 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 from data_utils import preprocess_data, save_model
 import seaborn as sns
 import matplotlib.pyplot as plt
+from data_utils import load_data
 
 def show():
     st.title("🤖 Model Training")
 
+    # Load data only when this page is accessed
     if 'data' not in st.session_state:
-        st.error("Data not loaded. Please return to the Home page.")
-        return
+        st.session_state.data = load_data()
     
     data = st.session_state.data
 

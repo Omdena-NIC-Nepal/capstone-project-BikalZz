@@ -1,0 +1,18 @@
+Climate Data:
+    url: https://climateknowledgeportal.worldbank.org/country/nepal/era5-historical
+        observed_annual-average-largest-1-day-precipitation.csv
+        observed-annual-average_temp.csv
+        observed-annulal-relative-humidity.csv
+        observed-annual-average-max-temp.csv
+        observed-annual-average-min-temp.csv			
+    url: https://data.humdata.org/dataset?q=nepal&sort=last_modified+desc&ext_page_size=25&page=4
+        npl-rainfall-adm2-full.csv		
+
+Socio-economic Data:
+    url: https://climateknowledgeportal.worldbank.org/country/nepal/era5-historical
+        eco-socio-env-health-edu-dev-enery_npl.csv
+
+Sentiment Data:
+    url: https://www.kaggle.com/datasets/thedevastator/social-media-sentiment-and-climate-change
+        negative.csv
+        positive.csv

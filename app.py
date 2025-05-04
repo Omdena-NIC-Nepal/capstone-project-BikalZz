@@ -1,6 +1,6 @@
 import streamlit as st
-from data_utils import load_data
 from pages import Home, EDA, Feature_Engineering, Model_Evaluation, Model_Training, Prediction, Climate_Text_Analysis
+
 def main():
     st.set_page_config(
         page_title = "Climate Temperature Prediction",
